@@ -794,7 +794,7 @@
                 console.log("Menghubungi API Gemini langsung tidak berhasil (ini normal jika dijalankan di luar pratinjau Canvas). Mengalihkan koneksi ke Cloudflare Workers...");
 
                 // PRIORITAS 2: GUNAAN JEMBATAN CLOUDFLARE WORKERS (UNTUK GITHUB PAGES / LIVE HOSTING)
-                if (!CLOUDFLARE_WORKER_URL || CLOUDFLARE_WORKER_URL.includes("ganti-dengan-worker-anda")) {
+                if (!CLOUDFLARE_WORKER_URL || CLOUDFLARE_WORKER_URL.includes("gemini-api-bridge")) {
                     throw new Error(
                         "<strong>Konfigurasi Belum Selesai:</strong><br>" +
                         "Asisten AI gagal dipanggil langsung (di luar lingkungan pratinjau). " +
@@ -803,7 +803,7 @@
                 }
 
                 // Validasi format URL wajib HTTPS
-                if (!CLOUDFLARE_WORKER_URL.startsWith("https://")) {
+                if (!CLOUDFLARE_WORKER_URL.startsWith("https://gemini-api-bridge.syahr8316.workers.dev")) {
                     throw new Error(
                         "<strong>Format URL Salah:</strong><br>" +
                         "URL Worker Anda wajib diawali dengan <code>https://</code>.<br>" +
