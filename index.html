@@ -791,7 +791,7 @@
             }
 
             // Jika berjalan di luar Canvas (GitHub Pages/lokal), kita gunakan Cloudflare Worker Bridge
-            if (CLOUDFLARE_WORKER_URL.includes("ganti-dengan-worker-anda")) {
+            if (CLOUDFLARE_WORKER_URL.includes("gemini-api-bridge")) {
                 throw new Error("Layanan asisten AI belum dikonfigurasi oleh Developer. Silakan pasang URL Cloudflare Worker Anda terlebih dahulu.");
             }
 
