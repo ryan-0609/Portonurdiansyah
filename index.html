@@ -738,7 +738,7 @@
             });
         });
 
-        // --- 4. Logika AI Marketing Lab (Terhubung ke Cloudflare Workers) ---
+       // --- 4. Logika AI Marketing Lab (Terhubung ke Cloudflare Workers) ---
         const aiForm = document.getElementById('ai-form');
         const submitBtn = document.getElementById('ai-submit');
         const submitText = document.getElementById('ai-submit-text');
@@ -748,53 +748,16 @@
         const resultContent = document.getElementById('ai-result-content');
 
         // =========================================================================
-        // 🚀 MASUKKAN URL CLOUDFLARE WORKER ANDA DI SINI:
+        // 🚀 URL CLOUDFLARE WORKER ANDA YANG AKTIF:
         // =========================================================================
-        // Setelah Anda mendeploy worker.js ke Cloudflare Workers, gantilah URL di bawah 
-        // dengan URL Worker Anda yang aktif (biasanya berakhiran .workers.dev).
-        // 
-        // Contoh: const CLOUDFLARE_WORKER_URL = "https://gemini-proxy.nurdiansyah.workers.dev";
         const CLOUDFLARE_WORKER_URL = "https://gemini-api-bridge.syahr8316.workers.dev";
         // =========================================================================
 
         async function fetchGeminiWithBackoff(prompt) {
             
-            // Aturan Platform Canvas: apiKey HARUS tetap "" di sini
+            // Aturan Platform Canvas: apiKey HARUS tetap "" di sini agar runtime Canvas mengisinya secara dinamis.
             const apiKey = ""; 
             
-            // Deteksi Lingkungan: Jika berjalan di Canvas Runtime (ada apiKey dari platform),
-            // kita panggil langsung endpoint Google Gemini secara lokal demi fitur Preview instan.
-            if (apiKey) {
-                const modelName = "gemini-2.5-flash-preview-09-2025";
-                const url = `https://generativelanguage.googleapis.com/v1beta/models/${modelName}:generateContent?key=${apiKey}`;
-                
-                const payload = {
-                    contents: [{ parts: [{ text: prompt }] }],
-                    systemInstruction: {
-                        parts: [{ text: "Anda adalah asisten AI dari Muhammad Nurdiansyah, seorang Digital Marketing & Social Media Manager ahli. Berikan rekomendasi copywriting terbaik." }]
-                    }
-                };
-
-                const response = await fetch(url, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(payload)
-                });
-
-                if (response.ok) {
-                    const data = await response.json();
-                    return data.candidates?.[0]?.content?.parts?.[0]?.text;
-                } else {
-                    const errData = await response.json().catch(() => ({}));
-                    throw new Error(errData.error?.message || "Gagal menghubungi API Gemini");
-                }
-            }
-
-            // Jika berjalan di luar Canvas (GitHub Pages/lokal), kita gunakan Cloudflare Worker Bridge
-            if (CLOUDFLARE_WORKER_URL.includes("gemini-api-bridge")) {
-                throw new Error("Layanan asisten AI belum dikonfigurasi oleh Developer. Silakan pasang URL Cloudflare Worker Anda terlebih dahulu.");
-            }
-
             const payload = {
                 contents: [{ parts: [{ text: prompt }] }],
                 systemInstruction: {
@@ -805,36 +768,110 @@
             let delay = 1000; // Jeda awal 1 detik
             const maxRetries = 5;
 
-            for (let i = 0; i < maxRetries; i++) {
-                try {
-                    const response = await fetch(CLOUDFLARE_WORKER_URL, {
-                        method: 'POST',
-                        headers: { 
-                            'Content-Type': 'application/json'
-                        },
-                        body: JSON.stringify(payload)
-                    });
+            // PRIORITAS 1: COBA HUBUNGI GOOGLE GEMINI SECARA LANGSUNG TERLEBIH DAHULU (PENTING UNTUK PREVIEW CANVAS)
+            // Di platform Canvas, sistem kami mengintersepsi URL ini dan menginjeksi API Key secara otomatis.
+            try {
+                const modelName = "gemini-2.5-flash-preview-09-2025";
+                const directUrl = `https://generativelanguage.googleapis.com/v1beta/models/${modelName}:generateContent?key=${apiKey}`;
+                
+                const response = await fetch(directUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
 
-                    if (response.ok) {
-                        const data = await response.json();
-                        const textResult = data.candidates?.[0]?.content?.parts?.[0]?.text;
-                        if (textResult) return textResult;
-                    } else {
-                        const errData = await response.json().catch(() => ({}));
-                        console.warn(`Attempt ${i+1} failed:`, errData);
-                        if (errData.error) {
-                            throw new Error(errData.error);
+                if (response.ok) {
+                    const data = await response.json();
+                    const textResult = data.candidates?.[0]?.content?.parts?.[0]?.text;
+                    if (textResult) {
+                        return textResult;
+                    }
+                }
+                // Jika response tidak ok (misalnya diluar Canvas / lokal karena API key kosong),
+                // kita paksa lepar error agar ditangkap oleh blok catch untuk beralih ke Cloudflare.
+                throw new Error("Direct fetch failed, bypass to Cloudflare bridge.");
+            } catch (directError) {
+                console.log("Menghubungi API Gemini langsung tidak berhasil (ini normal jika dijalankan di luar pratinjau Canvas). Mengalihkan koneksi ke Cloudflare Workers...");
+
+                // PRIORITAS 2: GUNAAN JEMBATAN CLOUDFLARE WORKERS (UNTUK GITHUB PAGES / LIVE HOSTING)
+                if (!CLOUDFLARE_WORKER_URL || CLOUDFLARE_WORKER_URL.includes("ganti-dengan-worker-anda")) {
+                    throw new Error(
+                        "<strong>Konfigurasi Belum Selesai:</strong><br>" +
+                        "Asisten AI gagal dipanggil langsung (di luar lingkungan pratinjau). " +
+                        "Untuk mengaktifkannya di web online Anda, pastikan Anda telah membuat Cloudflare Worker dan memasang URL-nya pada file HTML."
+                    );
+                }
+
+                // Validasi format URL wajib HTTPS
+                if (!CLOUDFLARE_WORKER_URL.startsWith("https://")) {
+                    throw new Error(
+                        "<strong>Format URL Salah:</strong><br>" +
+                        "URL Worker Anda wajib diawali dengan <code>https://</code>.<br>" +
+                        "Contoh: <code>https://gemini-api-bridge.syahr8316.workers.dev</code>"
+                    );
+                }
+
+                // Lakukan pemanggilan ke Cloudflare Worker dengan Exponential Backoff
+                for (let i = 0; i < maxRetries; i++) {
+                    try {
+                        const response = await fetch(CLOUDFLARE_WORKER_URL, {
+                            method: 'POST',
+                            headers: { 
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify(payload)
+                        });
+
+                        if (response.ok) {
+                            const data = await response.json();
+                            
+                            // Periksa apakah ada error bawaan dari response proxy
+                            if (data.error) {
+                                throw new Error(data.error);
+                            }
+
+                            const textResult = data.candidates?.[0]?.content?.parts?.[0]?.text;
+                            if (textResult) return textResult;
+                        } else {
+                            // Deteksi error jika Cloudflare mengembalikan HTML (seperti limit atau suspend)
+                            if (response.status === 404) {
+                                throw new Error("Cloudflare mengembalikan status <strong>404 Not Found</strong>. Pastikan URL Worker Anda sudah benar.");
+                            }
+                            if (response.status === 500) {
+                                throw new Error("Cloudflare mengembalikan status <strong>500 Internal Server Error</strong>. Pastikan Anda telah memasukkan variabel rahasia <code>GEMINI_API_KEY</code> di pengaturan Cloudflare Workers Anda.");
+                            }
+                        }
+                    } catch (e) {
+                        console.warn(`Percobaan ${i+1} gagal dengan error:`, e);
+                        
+                        // Jika kesalahan adalah kesalahan konfigurasi kritis, batalkan perulangan percobaan ulang
+                        if (e.message && (
+                            e.message.includes("Konfigurasi Belum Selesai") || 
+                            e.message.includes("Format URL Salah") || 
+                            e.message.includes("GEMINI_API_KEY") ||
+                            e.message.includes("404")
+                        )) {
+                            throw e;
+                        }
+
+                        // Lempar error jika ini adalah percobaan terakhir yang gagal
+                        if (i === maxRetries - 1) {
+                            throw e;
                         }
                     }
-                } catch (e) {
-                    console.warn(`Attempt ${i+1} failed with error:`, e);
+                    
+                    // Menunggu dengan peningkatan delay eksponensial (1s, 2s, 4s, 8s, 16s)
+                    await new Promise(resolve => setTimeout(resolve, delay));
+                    delay *= 2;
                 }
-                
-                // Menunggu dengan peningkatan delay eksponensial (1s, 2s, 4s, 8s, 16s)
-                await new Promise(resolve => setTimeout(resolve, delay));
-                delay *= 2;
             }
-            throw new Error("Gagal menghubungi asisten AI melalui Cloudflare. Pastikan Cloudflare Worker Anda berjalan dan Gemini API Key di Cloudflare sudah benar.");
+
+            throw new Error(
+                "<strong>Gagal Terhubung ke Cloudflare:</strong><br>" +
+                "Koneksi diblokir atau gagal merespon. Kemungkinan penyebab:<br>" +
+                "1. Anda belum mendeploy (Save and Deploy) kode di Cloudflare Worker Anda.<br>" +
+                "2. Terjadi masalah kebijakan keamanan (CORS) di browser Anda."
+            );
         }
 
         aiForm.addEventListener('submit', async (e) => {
@@ -868,7 +905,8 @@
 
             } catch (err) {
                 console.error(err);
-                errorBox.innerHTML = `<strong>Ups! Terjadi kendala saat memproses permintaan Anda.</strong><br>${err.message || 'Harap periksa koneksi Anda dan coba kembali.'}`;
+                // Tampilkan pesan error detail langsung ke pengguna
+                errorBox.innerHTML = `<strong>Ups! Terjadi kendala pada asisten AI:</strong><br>${err.message}`;
                 errorBox.classList.remove('hidden');
             } finally {
                 submitBtn.disabled = false;
@@ -877,7 +915,7 @@
                 loadingIcon.classList.remove('flex');
             }
         });
-
+        
     </script>
 </body>
 </html>
