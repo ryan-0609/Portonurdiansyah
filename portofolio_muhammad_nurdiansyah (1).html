@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio | Muhammad Nurdiansyah</title>
+    
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons via CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Font Styling -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #1e293b; /* slate-800 */
+        }
+        ::selection {
+            background-color: #d8f3dc;
+            color: #1b4332;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 min-h-screen flex flex-col justify-between">
+
+    <!-- NAVBAR -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-transparent py-5">
+        <div class="container mx-auto px-6 md:px-12 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold tracking-tighter">MN<span class="text-[#2d6a4f]">.</span></a>
+            
+            <!-- Desktop Nav -->
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="#profil" class="text-sm font-medium text-slate-600 hover:text-[#2d6a4f] transition-colors">Profil</a>
+                <a href="#pengalaman" class="text-sm font-medium text-slate-600 hover:text-[#2d6a4f] transition-colors">Pengalaman</a>
+                <a href="#karya" class="text-sm font-medium text-slate-600 hover:text-[#2d6a4f] transition-colors">Karya</a>
+                <a href="#ailab" class="text-sm font-medium text-slate-600 hover:text-[#2d6a4f] transition-colors">AI Lab</a>
+                <a href="#pendidikan" class="text-sm font-medium text-slate-600 hover:text-[#2d6a4f] transition-colors">Pendidikan</a>
+                <a href="#keahlian" class="text-sm font-medium text-slate-600 hover:text-[#2d6a4f] transition-colors">Keahlian</a>
+                <a href="#kontak" class="px-5 py-2.5 bg-slate-900 text-white text-sm font-medium rounded-full hover:bg-[#2d6a4f] transition-colors">Hubungi Saya</a>
+            </div>
+
+            <!-- Mobile Toggle -->
+            <button id="mobile-menu-btn" class="md:hidden text-slate-800 p-2 focus:outline-none" aria-label="Toggle Menu">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Nav -->
+        <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-white shadow-lg py-4 px-6 flex flex-col space-y-4 md:hidden border-t border-slate-100">
+            <a href="#profil" class="mobile-link text-slate-600 font-medium hover:text-[#2d6a4f] transition-colors">Profil</a>
+            <a href="#pengalaman" class="mobile-link text-slate-600 font-medium hover:text-[#2d6a4f] transition-colors">Pengalaman</a>
+            <a href="#karya" class="mobile-link text-slate-600 font-medium hover:text-[#2d6a4f] transition-colors">Karya</a>
+            <a href="#ailab" class="mobile-link text-slate-600 font-medium hover:text-[#2d6a4f] transition-colors">AI Lab</a>
+            <a href="#pendidikan" class="mobile-link text-slate-600 font-medium hover:text-[#2d6a4f] transition-colors">Pendidikan</a>
+            <a href="#keahlian" class="mobile-link text-slate-600 font-medium hover:text-[#2d6a4f] transition-colors">Keahlian</a>
+            <a href="#kontak" class="mobile-link inline-block text-center px-5 py-3 bg-[#2d6a4f] text-white font-medium rounded-lg hover:bg-[#1b4332] transition-colors">Hubungi Saya</a>
+        </div>
+    </nav>
+
+    <main class="flex-grow">
+        <!-- HERO SECTION -->
+        <section id="profil" class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-slate-50">
+            <div class="container mx-auto px-6 md:px-12">
+                <div class="flex flex-col-reverse lg:flex-row items-center gap-12 lg:gap-20">
+                    
+                    <div class="w-full lg:w-3/5 space-y-6 text-center lg:text-left">
+                        <div class="inline-block px-4 py-1.5 bg-[#d8f3dc] text-[#1b4332] font-semibold rounded-full text-sm">
+                            Portfolio Profesional
+                        </div>
+                        <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-tight">
+                            Halo, Saya <br class="hidden md:block"/>
+                            <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#2d6a4f] to-[#52b788]">
+                                Muhammad Nurdiansyah
+                            </span>
+                        </h1>
+                        <p class="text-xl font-medium text-slate-700">
+                            Digital Marketing & Social Media Manager
+                        </p>
+                        <p class="text-slate-600 leading-relaxed max-w-2xl mx-auto lg:mx-0 text-justify md:text-left">
+                            Lulusan S1 Pemasaran dengan pengalaman lebih dari 1 tahun di bidang Digital Marketing dan Manajemen Media Sosial. Memiliki keahlian dalam perencanaan content scheduling, pembuatan konten kreatif, analisis tren, serta pengelolaan marketplace. Terbiasa menganalisis performa data digital dengan Google Analytics guna meningkatkan engagement. Berorientasi pada detail dan adaptif dalam mengeksekusi strategi pemasaran digital tim.
+                        </p>
+                        
+                        <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-4">
+                            <a href="#pengalaman" class="px-6 py-3 bg-slate-900 text-white font-medium rounded-full hover:bg-[#2d6a4f] transition-colors shadow-lg hover:shadow-[#2d6a4f]/30 flex items-center gap-2">
+                                Lihat Portofolio <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/muhammad-nurdiansyah-5a79831a3" target="_blank" class="p-3 bg-white border border-slate-200 text-slate-600 rounded-full hover:border-[#2d6a4f] hover:text-[#2d6a4f] transition-colors shadow-sm" aria-label="LinkedIn Profile">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+                            </a>
+                            <a href="mailto:syahr8316@gmail.com" class="p-3 bg-white border border-slate-200 text-slate-600 rounded-full hover:border-[#2d6a4f] hover:text-[#2d6a4f] transition-colors shadow-sm" aria-label="Email Me">
+                                <i data-lucide="mail" class="w-5 h-5"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="w-full lg:w-2/5 flex justify-center lg:justify-end">
+                        <div class="relative">
+                            <div class="absolute inset-0 bg-gradient-to-tr from-[#b7e4c7] to-[#d8f3dc] rounded-[2rem] transform rotate-3 scale-105 opacity-70"></div>
+                            <img 
+                                src="https://rynn696.wordpress.com/wp-content/uploads/2024/11/whatsapp-image-2024-11-06-at-18.39.08.jpeg" 
+                                alt="Muhammad Nurdiansyah"
+                                onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Muhammad+Nurdiansyah&size=400&background=2d6a4f&color=fff';"
+                                class="relative z-10 w-64 h-64 md:w-80 md:h-80 lg:w-[400px] lg:h-[400px] object-cover object-top rounded-[2rem] shadow-2xl hover:scale-105 transition-transform duration-500"
+                            />
+                            <!-- Floating Badges -->
+                            <div class="absolute -bottom-6 -left-6 bg-white p-4 rounded-xl shadow-xl flex items-center gap-3 z-20 animate-bounce" style="animation-duration: 3s;">
+                                <div class="bg-[#d8f3dc] p-2 rounded-full text-[#2d6a4f]">
+                                    <i data-lucide="target" class="w-6 h-6"></i>
+                                </div>
+                                <div class="text-left">
+                                    <p class="text-xs text-slate-500 font-medium">Fokus Pada</p>
+                                    <p class="text-sm font-bold text-slate-800">Engagement</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- EXPERIENCE SECTION -->
+        <section id="pengalaman" class="py-20 bg-white">
+            <div class="container mx-auto px-6 md:px-12">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Pengalaman Kerja</h2>
+                    <div class="w-16 h-1.5 bg-[#2d6a4f] mx-auto rounded-full"></div>
+                </div>
+
+                <div class="max-w-4xl mx-auto">
+                    <!-- Timeline Items -->
+                    <div class="space-y-8 relative before:absolute before:inset-0 before:ml-1.5 before:-translate-x-px md:before:ml-[31px] before:w-0.5 before:h-full before:bg-slate-100">
+                        
+                        <!-- Item 1 -->
+                        <div class="relative pl-8 md:pl-16">
+                            <div class="absolute left-0 top-1.5 md:left-6 w-3 h-3 bg-[#2d6a4f] rounded-full border-4 border-white shadow"></div>
+                            <div class="bg-white p-6 md:p-8 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-all">
+                                <div class="flex flex-col md:flex-row md:items-center justify-between mb-4 gap-2">
+                                    <div>
+                                        <h3 class="text-xl font-bold text-slate-900">Sales and Marketing Associate</h3>
+                                        <div class="flex items-center gap-2 text-[#2d6a4f] font-medium mt-1">
+                                            <i data-lucide="briefcase" class="w-4 h-4"></i>
+                                            <span>PT Vicmay Stainless Equipment</span>
+                                        </div>
+                                    </div>
+                                    <div class="text-left md:text-right">
+                                        <span class="inline-block px-3 py-1 bg-slate-100 text-slate-600 text-xs font-semibold rounded-full mb-1">
+                                            Desember 2025 - Sekarang
+                                        </span>
+                                        <p class="text-sm text-slate-500 flex items-center md:justify-end gap-1">
+                                            <i data-lucide="map-pin" class="w-3.5 h-3.5"></i> Kabupaten Tangerang, Indonesia
+                                        </p>
+                                    </div>
+                                </div>
+                                <ul class="space-y-2 mt-4">
+                                    <li class="flex items-start gap-3 text-slate-600 text-sm leading-relaxed">
+                                        <span class="w-1.5 h-1.5 bg-[#52b788] rounded-full mt-2 flex-shrink-0"></span>
+                                        <span class="flex-1 text-justify">Merancang strategi dan memproduksi konten video kreatif untuk TikTok/Instagram, serta mendesain flyer digital dan thumbnail e-commerce menggunakan Canva.</span>
+                                    </li>
+                                    <li class="flex items-start gap-3 text-slate-600 text-sm leading-relaxed">
+                                        <span class="w-1.5 h-1.5 bg-[#52b788] rounded-full mt-2 flex-shrink-0"></span>
+                                        <span class="flex-1 text-justify">Mengelola manajemen waktu publikasi (content scheduling) yang berhasil menaikkan performa aktivitas harian, interaksi, dan pertumbuhan audiens di akun media sosial perusahaan.</span>
+                                    </li>
+                                    <li class="flex items-start gap-3 text-slate-600 text-sm leading-relaxed">
+                                        <span class="w-1.5 h-1.5 bg-[#52b788] rounded-full mt-2 flex-shrink-0"></span>
+                                        <span class="flex-1 text-justify">Mengelola katalog produk dan kampanye promosi pada marketplace seperti Shopee, Tokopedia, dan TikTok Shop.</span>
+                                    </li>
+                                    <li class="flex items-start gap-3 text-slate-600 text-sm leading-relaxed">
+                                        <span class="w-1.5 h-1.5 bg-[#52b788] rounded-full mt-2 flex-shrink-0"></span>
+                                        <span class="flex-1 text-justify">Menyusun dan mendesain proposal bisnis formal serta Company Profile interaktif untuk penawaran kerja sama B2B.</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Item 2 -->
+                        <div class="relative pl-8 md:pl-16">
+                            <div class="absolute left-0 top-1.5 md:left-6 w-3 h-3 bg-[#2d6a4f] rounded-full border-4 border-white shadow"></div>
+                            <div class="bg-white p-6 md:p-8 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-all">
+                                <div class="flex flex-col md:flex-row md:items-center justify-between mb-4 gap-2">
+                                    <div>
+                                        <h3 class="text-xl font-bold text-slate-900">Magang (Direct Marketing)</h3>
+                                        <div class="flex items-center gap-2 text-[#2d6a4f] font-medium mt-1">
+                                            <i data-lucide="briefcase" class="w-4 h-4"></i>
+                                            <span>PT Racer Robotik Indonesia</span>
+                                        </div>
+                                    </div>
+                                    <div class="text-left md:text-right">
+                                        <span class="inline-block px-3 py-1 bg-slate-100 text-slate-600 text-xs font-semibold rounded-full mb-1">
+                                            Juni 2023 - Desember 2023
+                                        </span>
+                                        <p class="text-sm text-slate-500 flex items-center md:justify-end gap-1">
+                                            <i data-lucide="map-pin" class="w-3.5 h-3.5"></i> Tangerang Selatan, Indonesia
+                                        </p>
+                                    </div>
+                                </div>
+                                <ul class="space-y-2 mt-4">
+                                    <li class="flex items-start gap-3 text-slate-600 text-sm leading-relaxed">
+                                        <span class="w-1.5 h-1.5 bg-[#52b788] rounded-full mt-2 flex-shrink-0"></span>
+                                        <span class="flex-1 text-justify">Membantu strategi pemasaran lapangan (direct marketing) dan melaksanakan demo produk secara persuasif ke sekolah-sekolah calon mitra.</span>
+                                    </li>
+                                    <li class="flex items-start gap-3 text-slate-600 text-sm leading-relaxed">
+                                        <span class="w-1.5 h-1.5 bg-[#52b788] rounded-full mt-2 flex-shrink-0"></span>
+                                        <span class="flex-1 text-justify">Mempresentasikan program edukasi teknologi dan Company Profile kepada calon sekolah mitra.</span>
+                                    </li>
+                                    <li class="flex items-start gap-3 text-slate-600 text-sm leading-relaxed">
+                                        <span class="w-1.5 h-1.5 bg-[#52b788] rounded-full mt-2 flex-shrink-0"></span>
+                                        <span class="flex-1 text-justify">Melakukan dokumentasi konten pembelajaran secara rapi sebagai bahan pelaporan dan aset publikasi pemasaran.</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Item 3 -->
+                        <div class="relative pl-8 md:pl-16">
+                            <div class="absolute left-0 top-1.5 md:left-6 w-3 h-3 bg-[#2d6a4f] rounded-full border-4 border-white shadow"></div>
+                            <div class="bg-white p-6 md:p-8 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-all">
+                                <div class="flex flex-col md:flex-row md:items-center justify-between mb-4 gap-2">
+                                    <div>
+                                        <h3 class="text-xl font-bold text-slate-900">Staff Admin</h3>
+                                        <div class="flex items-center gap-2 text-[#2d6a4f] font-medium mt-1">
+                                            <i data-lucide="briefcase" class="w-4 h-4"></i>
+                                            <span>Kantor Notaris Linsia, S.H., M.Kn.</span>
+                                        </div>
+                                    </div>
+                                    <div class="text-left md:text-right">
+                                        <span class="inline-block px-3 py-1 bg-slate-100 text-slate-600 text-xs font-semibold rounded-full mb-1">
+                                            Oktober 2020 - Mei 2021
+                                        </span>
+                                        <p class="text-sm text-slate-500 flex items-center md:justify-end gap-1">
+                                            <i data-lucide="map-pin" class="w-3.5 h-3.5"></i> Karawang, Indonesia
+                                        </p>
+                                    </div>
+                                </div>
+                                <ul class="space-y-2 mt-4">
+                                    <li class="flex items-start gap-3 text-slate-600 text-sm leading-relaxed">
+                                        <span class="w-1.5 h-1.5 bg-[#52b788] rounded-full mt-2 flex-shrink-0"></span>
+                                        <span class="flex-1 text-justify">Membantu proses penyusunan, pengetikan, dan pemeriksaan draft akta serta dokumen pendukung.</span>
+                                    </li>
+                                    <li class="flex items-start gap-3 text-slate-600 text-sm leading-relaxed">
+                                        <span class="w-1.5 h-1.5 bg-[#52b788] rounded-full mt-2 flex-shrink-0"></span>
+                                        <span class="flex-1 text-justify">Mengelola sistem pengarsipan (filing system) dokumen legal secara sistematis untuk memudahkan retribusi data.</span>
+                                    </li>
+                                    <li class="flex items-start gap-3 text-slate-600 text-sm leading-relaxed">
+                                        <span class="w-1.5 h-1.5 bg-[#52b788] rounded-full mt-2 flex-shrink-0"></span>
+                                        <span class="flex-1 text-justify">Membantu proses legalisasi, pendaftaran akta, dan administrasi teknis di bawah arahan langsung notaris.</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Organisasi -->
+                <div class="mt-24 max-w-4xl mx-auto">
+                    <h3 class="text-2xl font-bold text-slate-900 mb-8 flex items-center gap-3">
+                        <i data-lucide="users" class="text-[#2d6a4f] w-6 h-6"></i> Pengalaman Organisasi
+                    </h3>
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        
+                        <div class="bg-slate-50 rounded-xl p-6 border border-slate-100 hover:border-[#95d5b2] transition-colors">
+                            <div class="text-xs font-bold text-[#2d6a4f] mb-2">2024 - 2025</div>
+                            <h4 class="font-bold text-slate-900 mb-1">Wakil Ketua Bidang Ideologi & Politik</h4>
+                            <p class="text-sm font-medium text-slate-700 mb-3">GMNI Komisariat Universitas Primagraha</p>
+                            <p class="text-sm text-slate-500 leading-relaxed text-justify">Mengelola website organisasi berbasis wordpress dan menyusun silabus diskusi berkala.</p>
+                        </div>
+                        
+                        <div class="bg-slate-50 rounded-xl p-6 border border-slate-100 hover:border-[#95d5b2] transition-colors">
+                            <div class="text-xs font-bold text-[#2d6a4f] mb-2">2022 - 2023</div>
+                            <h4 class="font-bold text-slate-900 mb-1">Ketua Divisi Komunikasi dan Informasi</h4>
+                            <p class="text-sm font-medium text-slate-700 mb-3">Himpunan Mahasiswa Gunungkencana</p>
+                            <p class="text-sm text-slate-500 leading-relaxed text-justify">Memimpin produksi materi publikasi digital dan merancang kalender konten strategis (meningkatkan engagement Instagram).</p>
+                        </div>
+                        
+                        <div class="bg-slate-50 rounded-xl p-6 border border-slate-100 hover:border-[#95d5b2] transition-colors">
+                            <div class="text-xs font-bold text-[#2d6a4f] mb-2">2022 - 2023</div>
+                            <h4 class="font-bold text-slate-900 mb-1">Sekretaris</h4>
+                            <p class="text-sm font-medium text-slate-700 mb-3">Keluarga Mahasiswa Lebak Komisariat UPG</p>
+                            <p class="text-sm text-slate-500 leading-relaxed text-justify">Mengelola surat resmi, pengarsipan dokumen, dan menyusun notulen rapat serta LPJ.</p>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- PORTFOLIO GALLERY -->
+        <section id="karya" class="py-20 bg-slate-50">
+            <div class="container mx-auto px-6 md:px-12 max-w-6xl">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Karya & Portofolio</h2>
+                    <div class="w-16 h-1.5 bg-[#2d6a4f] mx-auto rounded-full mb-8"></div>
+                    
+                    <!-- Filter Buttons -->
+                    <div class="flex flex-wrap justify-center gap-3" id="portfolio-filters">
+                        <button data-filter="Semua" class="filter-btn px-5 py-2 rounded-full text-sm font-medium transition-all bg-[#2d6a4f] text-white shadow-md">Semua</button>
+                        <button data-filter="Desain" class="filter-btn px-5 py-2 rounded-full text-sm font-medium transition-all bg-white text-slate-600 border border-slate-200 hover:border-[#2d6a4f] hover:text-[#2d6a4f]">Desain</button>
+                        <button data-filter="Video" class="filter-btn px-5 py-2 rounded-full text-sm font-medium transition-all bg-white text-slate-600 border border-slate-200 hover:border-[#2d6a4f] hover:text-[#2d6a4f]">Video</button>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="portfolio-grid">
+                    
+                    <!-- Work 1 -->
+                    <div class="portfolio-item bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-100 group hover:shadow-lg transition-shadow flex flex-col" data-category="Desain">
+                        <div class="relative bg-slate-50 w-full overflow-hidden" style="height: 480px;">
+                            <iframe src="https://www.instagram.com/p/DWu4F0lGIsk/embed" class="w-full h-full border-0 absolute top-0 left-0" scrolling="no" allowtransparency="true" title="Desain Feed Instagram - Edukasi"></iframe>
+                            <div class="absolute top-3 right-3 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-[#2d6a4f] flex items-center gap-1.5 shadow-sm z-10 pointer-events-none">
+                                <i data-lucide="instagram" class="w-3.5 h-3.5"></i> Desain
+                            </div>
+                        </div>
+                        <div class="p-6 flex-1 flex flex-col justify-between border-t border-slate-100">
+                            <div>
+                                <h3 class="text-lg font-bold text-slate-900 mb-2 leading-tight">Desain Feed Instagram - Edukasi</h3>
+                                <p class="text-sm text-slate-600 leading-relaxed mb-4">Desain publikasi informatif untuk edukasi audiens.</p>
+                            </div>
+                            <a href="https://www.instagram.com/p/DWu4F0lGIsk/" target="_blank" class="inline-flex items-center gap-1.5 text-sm font-semibold text-[#2d6a4f] hover:text-[#1b4332] w-fit mt-2">
+                                Buka di Instagram <i data-lucide="external-link" class="w-4 h-4"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Work 2 -->
+                    <div class="portfolio-item bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-100 group hover:shadow-lg transition-shadow flex flex-col" data-category="Desain">
+                        <div class="relative bg-slate-50 w-full overflow-hidden" style="height: 480px;">
+                            <iframe src="https://www.instagram.com/p/DXJe835GII2/embed" class="w-full h-full border-0 absolute top-0 left-0" scrolling="no" allowtransparency="true" title="Desain Feed Instagram - Campaign"></iframe>
+                            <div class="absolute top-3 right-3 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-[#2d6a4f] flex items-center gap-1.5 shadow-sm z-10 pointer-events-none">
+                                <i data-lucide="instagram" class="w-3.5 h-3.5"></i> Desain
+                            </div>
+                        </div>
+                        <div class="p-6 flex-1 flex flex-col justify-between border-t border-slate-100">
+                            <div>
+                                <h3 class="text-lg font-bold text-slate-900 mb-2 leading-tight">Desain Feed Instagram - Campaign</h3>
+                                <p class="text-sm text-slate-600 leading-relaxed mb-4">Desain visual grafis yang terstruktur.</p>
+                            </div>
+                            <a href="https://www.instagram.com/p/DXJe835GII2/" target="_blank" class="inline-flex items-center gap-1.5 text-sm font-semibold text-[#2d6a4f] hover:text-[#1b4332] w-fit mt-2">
+                                Buka di Instagram <i data-lucide="external-link" class="w-4 h-4"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Work 3 -->
+                    <div class="portfolio-item bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-100 group hover:shadow-lg transition-shadow flex flex-col" data-category="Desain">
+                        <div class="relative bg-slate-50 w-full overflow-hidden" style="height: 480px;">
+                            <iframe src="https://www.instagram.com/p/DU4noTUAc38/embed" class="w-full h-full border-0 absolute top-0 left-0" scrolling="no" allowtransparency="true" title="Desain Feed Instagram - Interaktif"></iframe>
+                            <div class="absolute top-3 right-3 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-[#2d6a4f] flex items-center gap-1.5 shadow-sm z-10 pointer-events-none">
+                                <i data-lucide="instagram" class="w-3.5 h-3.5"></i> Desain
+                            </div>
+                        </div>
+                        <div class="p-6 flex-1 flex flex-col justify-between border-t border-slate-100">
+                            <div>
+                                <h3 class="text-lg font-bold text-slate-900 mb-2 leading-tight">Desain Feed Instagram - Interaktif</h3>
+                                <p class="text-sm text-slate-600 leading-relaxed mb-4">Konten grafis untuk memancing interaksi pengikut.</p>
+                            </div>
+                            <a href="https://www.instagram.com/p/DU4noTUAc38/" target="_blank" class="inline-flex items-center gap-1.5 text-sm font-semibold text-[#2d6a4f] hover:text-[#1b4332] w-fit mt-2">
+                                Buka di Instagram <i data-lucide="external-link" class="w-4 h-4"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Work 4 -->
+                    <div class="portfolio-item bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-100 group hover:shadow-lg transition-shadow flex flex-col" data-category="Video">
+                        <div class="relative bg-slate-50 w-full overflow-hidden" style="height: 480px;">
+                            <iframe src="https://www.instagram.com/reel/DUSwSPwkpJ3/embed" class="w-full h-full border-0 absolute top-0 left-0" scrolling="no" allowtransparency="true" title="Video Reels - Promosi 1"></iframe>
+                            <div class="absolute top-3 right-3 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-[#2d6a4f] flex items-center gap-1.5 shadow-sm z-10 pointer-events-none">
+                                <i data-lucide="instagram" class="w-3.5 h-3.5"></i> Video
+                            </div>
+                        </div>
+                        <div class="p-6 flex-1 flex flex-col justify-between border-t border-slate-100">
+                            <div>
+                                <h3 class="text-lg font-bold text-slate-900 mb-2 leading-tight">Video Reels - Promosi 1</h3>
+                                <p class="text-sm text-slate-600 leading-relaxed mb-4">Video promosi Reels dengan visual yang dinamis.</p>
+                            </div>
+                            <a href="https://www.instagram.com/reels/DUSwSPwkpJ3/" target="_blank" class="inline-flex items-center gap-1.5 text-sm font-semibold text-[#2d6a4f] hover:text-[#1b4332] w-fit mt-2">
+                                Buka di Instagram <i data-lucide="external-link" class="w-4 h-4"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Work 5 -->
+                    <div class="portfolio-item bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-100 group hover:shadow-lg transition-shadow flex flex-col" data-category="Video">
+                        <div class="relative bg-slate-50 w-full overflow-hidden" style="height: 480px;">
+                            <iframe src="https://www.instagram.com/reel/DVk9JoaSbaL/embed" class="w-full h-full border-0 absolute top-0 left-0" scrolling="no" allowtransparency="true" title="Video Reels - Promosi 2"></iframe>
+                            <div class="absolute top-3 right-3 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-[#2d6a4f] flex items-center gap-1.5 shadow-sm z-10 pointer-events-none">
+                                <i data-lucide="instagram" class="w-3.5 h-3.5"></i> Video
+                            </div>
+                        </div>
+                        <div class="p-6 flex-1 flex flex-col justify-between border-t border-slate-100">
+                            <div>
+                                <h3 class="text-lg font-bold text-slate-900 mb-2 leading-tight">Video Reels - Promosi 2</h3>
+                                <p class="text-sm text-slate-600 leading-relaxed mb-4">Konten video kreatif untuk format Instagram Reels.</p>
+                            </div>
+                            <a href="https://www.instagram.com/reels/DVk9JoaSbaL/" target="_blank" class="inline-flex items-center gap-1.5 text-sm font-semibold text-[#2d6a4f] hover:text-[#1b4332] w-fit mt-2">
+                                Buka di Instagram <i data-lucide="external-link" class="w-4 h-4"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- AI MARKETING LAB SECTION -->
+        <section id="ailab" class="py-20 bg-emerald-900 text-white relative overflow-hidden">
+            <!-- Background Ornaments -->
+            <div class="absolute top-0 right-0 -mr-20 -mt-20 w-72 h-72 rounded-full bg-emerald-800 bg-opacity-50 blur-3xl"></div>
+            <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 rounded-full bg-[#2d6a4f] bg-opacity-50 blur-3xl"></div>
+
+            <div class="container mx-auto px-6 md:px-12 max-w-5xl relative z-10">
+                <div class="flex flex-col md:flex-row gap-12 items-center">
+                    
+                    <!-- Header & Info -->
+                    <div class="w-full md:w-1/2 space-y-6 text-left">
+                        <div class="inline-flex items-center gap-2 px-4 py-1.5 bg-emerald-800/50 border border-emerald-600 rounded-full text-emerald-300 font-semibold text-sm backdrop-blur-sm">
+                            ✨ Powered by Gemini AI (Secure Serverless Bridge)
+                        </div>
+                        <h2 class="text-3xl md:text-5xl font-bold leading-tight">
+                            Coba Asisten <span class="text-emerald-400">AI Marketing</span> Saya 🤖
+                        </h2>
+                        <p class="text-emerald-100/80 leading-relaxed text-lg">
+                            Masukkan ide produk Anda, dan biarkan AI meracik <i>caption</i> media sosial yang <i>engaging</i> serta strategi kampanye kilat layaknya seorang Digital Marketer profesional. 🚀
+                        </p>
+                        <div class="flex items-center gap-4 text-emerald-300 pt-4 border-t border-emerald-800/50">
+                            <p class="text-sm">💡 Mendemonstrasikan integrasi <i>Generative AI</i> secara aman menggunakan arsitektur serverless Cloudflare Workers.</p>
+                        </div>
+                    </div>
+
+                    <!-- AI Form & Result -->
+                    <div class="w-full md:w-1/2">
+                        <div class="bg-white rounded-2xl p-6 md:p-8 shadow-2xl text-slate-800">
+                            
+                            <div class="flex justify-between items-center mb-4 border-b border-slate-100 pb-3">
+                                <span class="text-xs font-bold text-slate-400 uppercase tracking-wider">Mode Interaktif</span>
+                                <span class="text-[#2d6a4f] flex items-center gap-1 text-xs font-semibold">
+                                    <span class="w-2 h-2 bg-green-500 rounded-full animate-ping"></span> Live & Secure
+                                </span>
+                            </div>
+
+                            <form id="ai-form" class="space-y-4">
+                                <div class="text-left">
+                                    <label class="block text-sm font-bold text-slate-700 mb-1.5">Nama Produk / Jasa</label>
+                                    <input 
+                                        type="text" 
+                                        id="product-name"
+                                        required
+                                        placeholder="Contoh: Sepatu Sneakers Lokal"
+                                        class="w-full px-4 py-3 text-base rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#2d6a4f] focus:border-transparent transition-all"
+                                    />
+                                </div>
+                                <div class="text-left">
+                                    <label class="block text-sm font-bold text-slate-700 mb-1.5">Target Audiens (Opsional)</label>
+                                    <input 
+                                        type="text" 
+                                        id="target-audience"
+                                        placeholder="Contoh: Mahasiswa Gen Z"
+                                        class="w-full px-4 py-3 text-base rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#2d6a4f] focus:border-transparent transition-all"
+                                    />
+                                </div>
+                                <button 
+                                    type="submit" 
+                                    id="ai-submit"
+                                    class="w-full flex items-center justify-center gap-2 bg-[#2d6a4f] text-white font-bold py-3.5 px-6 rounded-xl hover:bg-[#1b4332] transition-colors disabled:opacity-70 disabled:cursor-not-allowed"
+                                >
+                                    <span id="ai-submit-text" class="flex items-center gap-2">Buat Ide Marketing ✨</span>
+                                    <span id="ai-loading-icon" class="hidden items-center gap-2">🪄 Meracik Ide...</span>
+                                </button>
+                            </form>
+
+                            <!-- Error State -->
+                            <div id="ai-error" class="hidden mt-6 p-4 bg-red-50 border border-red-200 text-red-600 text-sm rounded-xl text-justify"></div>
+
+                            <!-- AI Result Box -->
+                            <div id="ai-result-box" class="hidden mt-6 border-t border-slate-100 pt-6">
+                                <div class="flex items-center gap-2 text-[#2d6a4f] font-bold mb-4">
+                                    🎯 Hasil dari AI:
+                                </div>
+                                <div 
+                                    id="ai-result-content"
+                                    class="bg-slate-50 p-4 rounded-xl border border-slate-200 text-sm text-slate-700 leading-relaxed max-h-64 overflow-y-auto text-justify"
+                                ></div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- EDUCATION & CERTIFICATIONS -->
+        <section id="pendidikan" class="py-20 bg-slate-50">
+            <div class="container mx-auto px-6 md:px-12">
+                <div class="max-w-5xl mx-auto grid lg:grid-cols-2 gap-16">
+                    
+                    <!-- Pendidikan -->
+                    <div>
+                        <div class="mb-10 text-left">
+                            <h2 class="text-3xl font-bold text-slate-900 mb-4 flex items-center gap-3">
+                                <i data-lucide="graduation-cap" class="text-[#2d6a4f] w-8 h-8"></i> Pendidikan
+                            </h2>
+                            <div class="w-12 h-1.5 bg-[#2d6a4f] rounded-full"></div>
+                        </div>
+                        
+                        <div class="space-y-6">
+                            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 text-left">
+                                <h3 class="text-xl font-bold text-slate-900">Universitas Primagraha</h3>
+                                <p class="text-[#2d6a4f] font-medium mb-4">S1 Manajemen / Manajemen Pemasaran</p>
+                                <div class="flex flex-wrap gap-y-2 gap-x-6 text-sm text-slate-500">
+                                    <span class="flex items-center gap-1"><i data-lucide="map-pin" class="w-4 h-4"></i> Kota Serang, Banten</span>
+                                    <span class="flex items-center gap-1"><i data-lucide="award" class="w-4 h-4"></i> IPK: 3.42 / 4.00</span>
+                                </div>
+                                <div class="mt-4 pt-4 border-t border-slate-100">
+                                    <p class="text-sm font-semibold text-slate-600">September 2021 - September 2025</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sertifikasi -->
+                    <div>
+                        <div class="mb-10 text-left">
+                            <h2 class="text-3xl font-bold text-slate-900 mb-4 flex items-center gap-3">
+                                <i data-lucide="award" class="text-[#2d6a4f] w-8 h-8"></i> Sertifikasi
+                            </h2>
+                            <div class="w-12 h-1.5 bg-[#2d6a4f] rounded-full"></div>
+                        </div>
+                        
+                        <div class="space-y-6 text-left">
+                            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+                                <h3 class="text-lg font-bold text-slate-900 leading-tight mb-2">Training Course Awareness ISO 9001:2015</h3>
+                                <p class="text-sm text-[#2d6a4f] font-medium mb-3">PT Anukula Ghana x Universitas Primagraha</p>
+                                <p class="text-sm text-slate-600 leading-relaxed mb-4 text-justify">Mempelajari prinsip Sistem Manajemen Mutu (SMM) dan implementasi framework PDCA.</p>
+                                <div class="inline-block px-3 py-1 bg-slate-50 text-slate-600 text-xs font-semibold rounded-lg">Juni 2024</div>
+                            </div>
+
+                            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+                                <h3 class="text-lg font-bold text-slate-900 leading-tight mb-2">Sertifikasi Master Trainer Robotic & Coding</h3>
+                                <p class="text-sm text-[#2d6a4f] font-medium mb-3">IYRA Indonesia x RACER Robotic</p>
+                                <p class="text-sm text-slate-600 leading-relaxed mb-4 text-justify">Pengembangan logika terstruktur, pemecahan masalah (troubleshooting), dan adaptasi perangkat lunak.</p>
+                                <div class="inline-block px-3 py-1 bg-slate-50 text-slate-600 text-xs font-semibold rounded-lg">Desember 2023</div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- SKILLS SECTION -->
+        <section id="keahlian" class="py-20 bg-white">
+            <div class="container mx-auto px-6 md:px-12 max-w-5xl">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Keahlian</h2>
+                    <div class="w-16 h-1.5 bg-[#2d6a4f] mx-auto rounded-full"></div>
+                    <p class="mt-4 text-slate-500">Kombinasi antara strategi teknis pemasaran dan kemampuan interpersonal.</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-12">
+                    
+                    <!-- Hard Skills -->
+                    <div class="text-left">
+                        <h3 class="text-xl font-bold text-slate-800 mb-6 flex items-center gap-2">
+                            <i data-lucide="monitor-play" class="text-[#2d6a4f] w-5 h-5"></i> Keahlian Teknis
+                        </h3>
+                        <div class="flex flex-wrap gap-2.5">
+                            <span class="px-4 py-2 bg-slate-50 border border-slate-200 text-slate-700 text-sm font-medium rounded-lg hover:border-[#52b788] hover:text-[#1b4332] transition-colors cursor-default">Microsoft Office</span>
+                            <span class="px-4 py-2 bg-slate-50 border border-slate-200 text-slate-700 text-sm font-medium rounded-lg hover:border-[#52b788] hover:text-[#1b4332] transition-colors cursor-default">Google Workspace</span>
+                            <span class="px-4 py-2 bg-slate-50 border border-slate-200 text-slate-700 text-sm font-medium rounded-lg hover:border-[#52b788] hover:text-[#1b4332] transition-colors cursor-default">Canva</span>
+                            <span class="px-4 py-2 bg-slate-50 border border-slate-200 text-slate-700 text-sm font-medium rounded-lg hover:border-[#52b788] hover:text-[#1b4332] transition-colors cursor-default">Adobe Illustrator</span>
+                            <span class="px-4 py-2 bg-slate-50 border border-slate-200 text-slate-700 text-sm font-medium rounded-lg hover:border-[#52b788] hover:text-[#1b4332] transition-colors cursor-default">Adobe Photoshop</span>
+                            <span class="px-4 py-2 bg-slate-50 border border-slate-200 text-slate-700 text-sm font-medium rounded-lg hover:border-[#52b788] hover:text-[#1b4332] transition-colors cursor-default">CapCut</span>
+                            <span class="px-4 py-2 bg-slate-50 border border-slate-200 text-slate-700 text-sm font-medium rounded-lg hover:border-[#52b788] hover:text-[#1b4332] transition-colors cursor-default">Notion</span>
+                            <span class="px-4 py-2 bg-slate-50 border border-slate-200 text-slate-700 text-sm font-medium rounded-lg hover:border-[#52b788] hover:text-[#1b4332] transition-colors cursor-default">WordPress</span>
+                            <span class="px-4 py-2 bg-slate-50 border border-slate-200 text-slate-700 text-sm font-medium rounded-lg hover:border-[#52b788] hover:text-[#1b4332] transition-colors cursor-default">Google Trends</span>
+                            <span class="px-4 py-2 bg-slate-50 border border-slate-200 text-slate-700 text-sm font-medium rounded-lg hover:border-[#52b788] hover:text-[#1b4332] transition-colors cursor-default">Semrush</span>
+                            <span class="px-4 py-2 bg-slate-50 border border-slate-200 text-slate-700 text-sm font-medium rounded-lg hover:border-[#52b788] hover:text-[#1b4332] transition-colors cursor-default">Social Media Management</span>
+                            <span class="px-4 py-2 bg-slate-50 border border-slate-200 text-slate-700 text-sm font-medium rounded-lg hover:border-[#52b788] hover:text-[#1b4332] transition-colors cursor-default">Content Writing</span>
+                            <span class="px-4 py-2 bg-slate-50 border border-slate-200 text-slate-700 text-sm font-medium rounded-lg hover:border-[#52b788] hover:text-[#1b4332] transition-colors cursor-default">Shopee</span>
+                            <span class="px-4 py-2 bg-slate-50 border border-slate-200 text-slate-700 text-sm font-medium rounded-lg hover:border-[#52b788] hover:text-[#1b4332] transition-colors cursor-default">Tiktok Shop</span>
+                            <span class="px-4 py-2 bg-slate-50 border border-slate-200 text-slate-700 text-sm font-medium rounded-lg hover:border-[#52b788] hover:text-[#1b4332] transition-colors cursor-default">Tokopedia</span>
+                            <span class="px-4 py-2 bg-slate-50 border border-slate-200 text-slate-700 text-sm font-medium rounded-lg hover:border-[#52b788] hover:text-[#1b4332] transition-colors cursor-default">Tiktok Studio</span>
+                            <span class="px-4 py-2 bg-slate-50 border border-slate-200 text-slate-700 text-sm font-medium rounded-lg hover:border-[#52b788] hover:text-[#1b4332] transition-colors cursor-default">OBS Studio</span>
+                            <span class="px-4 py-2 bg-slate-50 border border-slate-200 text-slate-700 text-sm font-medium rounded-lg hover:border-[#52b788] hover:text-[#1b4332] transition-colors cursor-default">Marketplace Management</span>
+                        </div>
+                    </div>
+
+                    <!-- Soft Skills -->
+                    <div class="text-left">
+                        <h3 class="text-xl font-bold text-slate-800 mb-6 flex items-center gap-2">
+                            <i data-lucide="users" class="text-[#2d6a4f] w-5 h-5"></i> Soft Skills
+                        </h3>
+                        <div class="flex flex-wrap gap-2.5">
+                            <span class="px-4 py-2 bg-emerald-50 border border-emerald-200 text-[#1b4332] text-sm font-medium rounded-lg hover:bg-emerald-100 transition-colors cursor-default">Communication</span>
+                            <span class="px-4 py-2 bg-emerald-50 border border-emerald-200 text-[#1b4332] text-sm font-medium rounded-lg hover:bg-emerald-100 transition-colors cursor-default">Teamwork</span>
+                            <span class="px-4 py-2 bg-emerald-50 border border-emerald-200 text-[#1b4332] text-sm font-medium rounded-lg hover:bg-emerald-100 transition-colors cursor-default">Time Management</span>
+                            <span class="px-4 py-2 bg-emerald-50 border border-emerald-200 text-[#1b4332] text-sm font-medium rounded-lg hover:bg-emerald-100 transition-colors cursor-default">Adaptability</span>
+                            <span class="px-4 py-2 bg-emerald-50 border border-emerald-200 text-[#1b4332] text-sm font-medium rounded-lg hover:bg-emerald-100 transition-colors cursor-default">Attention to Detail</span>
+                            <span class="px-4 py-2 bg-emerald-50 border border-emerald-200 text-[#1b4332] text-sm font-medium rounded-lg hover:bg-emerald-100 transition-colors cursor-default">Problem Solving</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer id="kontak" class="bg-slate-900 text-slate-300 py-16">
+        <div class="container mx-auto px-6 md:px-12 max-w-5xl">
+            <div class="grid md:grid-cols-2 gap-12 items-center border-b border-slate-800 pb-12 mb-8">
+                
+                <div class="text-left">
+                    <h2 class="text-3xl font-bold text-white mb-4">Mari Berkolaborasi!</h2>
+                    <p class="text-slate-400 mb-6 max-w-sm text-justify">
+                        Tertarik untuk bekerja sama atau membutuhkan keahlian dalam manajemen media sosial dan strategi pemasaran digital?
+                    </p>
+                    <a href="mailto:syahr8316@gmail.com" class="inline-flex items-center gap-2 px-6 py-3 bg-[#2d6a4f] text-white font-medium rounded-lg hover:bg-[#1b4332] transition-colors">
+                        <i data-lucide="mail" class="w-4 h-4"></i> Kirim Pesan
+                    </a>
+                </div>
+
+                <div class="space-y-4 md:pl-12 md:border-l border-slate-800 text-left">
+                    <a href="tel:08569016842" class="flex items-center gap-4 hover:text-white transition-colors group">
+                        <div class="w-12 h-12 bg-slate-800 rounded-full flex items-center justify-center group-hover:bg-[#2d6a4f] transition-colors">
+                            <i data-lucide="phone" class="w-5 h-5"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-0.5">Telepon / WhatsApp</p>
+                            <p class="text-lg font-medium">08569016842</p>
+                        </div>
+                    </a>
+                    
+                    <a href="https://www.linkedin.com/in/muhammad-nurdiansyah-5a79831a3" target="_blank" class="flex items-center gap-4 hover:text-white transition-colors group" aria-label="LinkedIn Profile Link">
+                        <div class="w-12 h-12 bg-slate-800 rounded-full flex items-center justify-center group-hover:bg-[#2d6a4f] transition-colors">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+                        </div>
+                        <div>
+                            <p class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-0.5">LinkedIn</p>
+                            <p class="text-lg font-medium">Muhammad Nurdiansyah</p>
+                        </div>
+                    </a>
+
+                    <a href="https://rynn696.wordpress.com" target="_blank" class="flex items-center gap-4 hover:text-white transition-colors group" aria-label="WordPress Portfolio Blog Link">
+                        <div class="w-12 h-12 bg-slate-800 rounded-full flex items-center justify-center group-hover:bg-[#2d6a4f] transition-colors">
+                            <i data-lucide="link" class="w-5 h-5"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-0.5">Portofolio Blog</p>
+                            <p class="text-lg font-medium">rynn696.wordpress.com</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-500">
+                <p>&copy; 2026 Muhammad Nurdiansyah. All rights reserved.</p>
+                <p class="flex items-center gap-1">
+                    <i data-lucide="map-pin" class="w-3.5 h-3.5"></i> Banten, Indonesia
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MAIN JAVASCRIPT LOGIC -->
+    <script>
+        // Inisialisasi ikon Lucide
+        lucide.createIcons();
+
+        // --- 1. Logika Navbar Scroll ---
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('bg-white', 'shadow-md', 'py-3');
+                navbar.classList.remove('bg-transparent', 'py-5');
+            } else {
+                navbar.classList.remove('bg-white', 'shadow-md', 'py-3');
+                navbar.classList.add('bg-transparent', 'py-5');
+            }
+        });
+
+        // --- 2. Logika Mobile Menu ---
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        mobileMenuBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Tutup menu mobile ketika link di-klik
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Tutup menu mobile saat klik di luar area menu
+        document.addEventListener('click', (e) => {
+            if (!mobileMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+                mobileMenu.classList.add('hidden');
+            }
+        });
+
+        // --- 3. Logika Filter Portofolio ---
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Hapus gaya aktif dari semua tombol
+                filterBtns.forEach(b => {
+                    b.classList.remove('bg-[#2d6a4f]', 'text-white', 'shadow-md');
+                    b.classList.add('bg-white', 'text-slate-600', 'border', 'border-slate-200');
+                });
+
+                // Tambahkan gaya aktif ke tombol yang diklik
+                btn.classList.add('bg-[#2d6a4f]', 'text-white', 'shadow-md');
+                btn.classList.remove('bg-white', 'text-slate-600', 'border', 'border-slate-200');
+
+                // Filter Item
+                const filterValue = btn.getAttribute('data-filter');
+                portfolioItems.forEach(item => {
+                    if (filterValue === 'Semua' || item.getAttribute('data-category') === filterValue) {
+                        item.classList.remove('hidden');
+                        item.classList.add('flex'); // Kembalikan ke display: flex aslinya
+                    } else {
+                        item.classList.add('hidden');
+                        item.classList.remove('flex');
+                    }
+                });
+            });
+        });
+
+        // --- 4. Logika AI Marketing Lab (Terhubung ke Cloudflare Workers) ---
+        const aiForm = document.getElementById('ai-form');
+        const submitBtn = document.getElementById('ai-submit');
+        const submitText = document.getElementById('ai-submit-text');
+        const loadingIcon = document.getElementById('ai-loading-icon');
+        const errorBox = document.getElementById('ai-error');
+        const resultBox = document.getElementById('ai-result-box');
+        const resultContent = document.getElementById('ai-result-content');
+
+        // =========================================================================
+        // 🚀 MASUKKAN URL CLOUDFLARE WORKER ANDA DI SINI:
+        // =========================================================================
+        // Setelah Anda mendeploy worker.js ke Cloudflare Workers, gantilah URL di bawah 
+        // dengan URL Worker Anda yang aktif (biasanya berakhiran .workers.dev).
+        // 
+        // Contoh: const CLOUDFLARE_WORKER_URL = "https://gemini-proxy.nurdiansyah.workers.dev";
+        const CLOUDFLARE_WORKER_URL = "gemini-api-bridge.syahr8316.workers.dev";
+        // =========================================================================
+
+        async function fetchGeminiWithBackoff(prompt) {
+            
+            // Aturan Platform Canvas: apiKey HARUS tetap "" di sini
+            const apiKey = ""; 
+            
+            // Deteksi Lingkungan: Jika berjalan di Canvas Runtime (ada apiKey dari platform),
+            // kita panggil langsung endpoint Google Gemini secara lokal demi fitur Preview instan.
+            if (apiKey) {
+                const modelName = "gemini-2.5-flash-preview-09-2025";
+                const url = `https://generativelanguage.googleapis.com/v1beta/models/${modelName}:generateContent?key=${apiKey}`;
+                
+                const payload = {
+                    contents: [{ parts: [{ text: prompt }] }],
+                    systemInstruction: {
+                        parts: [{ text: "Anda adalah asisten AI dari Muhammad Nurdiansyah, seorang Digital Marketing & Social Media Manager ahli. Berikan rekomendasi copywriting terbaik." }]
+                    }
+                };
+
+                const response = await fetch(url, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                if (response.ok) {
+                    const data = await response.json();
+                    return data.candidates?.[0]?.content?.parts?.[0]?.text;
+                } else {
+                    const errData = await response.json().catch(() => ({}));
+                    throw new Error(errData.error?.message || "Gagal menghubungi API Gemini");
+                }
+            }
+
+            // Jika berjalan di luar Canvas (GitHub Pages/lokal), kita gunakan Cloudflare Worker Bridge
+            if (CLOUDFLARE_WORKER_URL.includes("ganti-dengan-worker-anda")) {
+                throw new Error("Layanan asisten AI belum dikonfigurasi oleh Developer. Silakan pasang URL Cloudflare Worker Anda terlebih dahulu.");
+            }
+
+            const payload = {
+                contents: [{ parts: [{ text: prompt }] }],
+                systemInstruction: {
+                    parts: [{ text: "Anda adalah asisten AI dari Muhammad Nurdiansyah, seorang Digital Marketing & Social Media Manager ahli. Berikan rekomendasi copywriting terbaik." }]
+                }
+            };
+
+            let delay = 1000; // Jeda awal 1 detik
+            const maxRetries = 5;
+
+            for (let i = 0; i < maxRetries; i++) {
+                try {
+                    const response = await fetch(CLOUDFLARE_WORKER_URL, {
+                        method: 'POST',
+                        headers: { 
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(payload)
+                    });
+
+                    if (response.ok) {
+                        const data = await response.json();
+                        const textResult = data.candidates?.[0]?.content?.parts?.[0]?.text;
+                        if (textResult) return textResult;
+                    } else {
+                        const errData = await response.json().catch(() => ({}));
+                        console.warn(`Attempt ${i+1} failed:`, errData);
+                        if (errData.error) {
+                            throw new Error(errData.error);
+                        }
+                    }
+                } catch (e) {
+                    console.warn(`Attempt ${i+1} failed with error:`, e);
+                }
+                
+                // Menunggu dengan peningkatan delay eksponensial (1s, 2s, 4s, 8s, 16s)
+                await new Promise(resolve => setTimeout(resolve, delay));
+                delay *= 2;
+            }
+            throw new Error("Gagal menghubungi asisten AI melalui Cloudflare. Pastikan Cloudflare Worker Anda berjalan dan Gemini API Key di Cloudflare sudah benar.");
+        }
+
+        aiForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const productName = document.getElementById('product-name').value;
+            const targetAudience = document.getElementById('target-audience').value;
+            
+            if (!productName) return;
+
+            // UI Loading state
+            submitBtn.disabled = true;
+            submitText.classList.add('hidden');
+            loadingIcon.classList.remove('hidden');
+            loadingIcon.classList.add('flex');
+            errorBox.classList.add('hidden');
+            resultBox.classList.add('hidden');
+
+            try {
+                const prompt = `Buat strategi pemasaran kilat untuk produk bernama "${productName}" dengan target audiens "${targetAudience || 'Umum'}".
+                
+                Berikan hasil dalam format HTML sederhana (seperti <br>, <strong>, <ul>, <li>) dengan rincian berikut:
+                1. <strong>✨ Caption Instagram Kreatif</strong>: Tulis 1 paragraf caption yang engaging, berorientasi tindakan/CTA yang jelas, dan sertakan 5 hashtag yang relevan.
+                2. <strong>🚀 Ide Strategi Kilat</strong>: Berikan 2 poin ide konten atau campaign taktis untuk mempromosikan produk tersebut.
+                
+                Tulis semenarik mungkin dengan bahasa Indonesia yang interaktif dan asik khas copywriter profesional. Hindari penggunaan tag markdown (\`\`\`).`;
+
+                const aiResponseText = await fetchGeminiWithBackoff(prompt);
+                resultContent.innerHTML = aiResponseText;
+                resultBox.classList.remove('hidden');
+
+            } catch (err) {
+                console.error(err);
+                errorBox.innerHTML = `<strong>Ups! Terjadi kendala saat memproses permintaan Anda.</strong><br>${err.message || 'Harap periksa koneksi Anda dan coba kembali.'}`;
+                errorBox.classList.remove('hidden');
+            } finally {
+                submitBtn.disabled = false;
+                submitText.classList.remove('hidden');
+                loadingIcon.classList.add('hidden');
+                loadingIcon.classList.remove('flex');
+            }
+        });
+
+    </script>
+</body>
+</html>
